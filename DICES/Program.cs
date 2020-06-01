@@ -27,13 +27,19 @@ namespace DICES
                     {
                     static void Main(string[] args)
                            {
-                            
-                            Random generator = new Random(0);
-                                for (int i = 1; i < 6; i++)
-                            Console.WriteLine(generator.Next(5));
-                            Console.ReadKey();
 
-                           }
+            //Random generator = new Random(0);
+            //    for (int i = 1; i < 6; i++)
+            //Console.WriteLine(generator.Next(1,7));
+            //Console.ReadKey();
+            var rand = new Random();
+            Console.WriteLine("Five random integers between 1 and 6:");
+            for (int ctr = 0; ctr <= 4; ctr++)
+                Console.Write("{0,8:N0}", rand.Next(1, 7));
+            Console.WriteLine();
+
+        }
                     }
+
     }
 
