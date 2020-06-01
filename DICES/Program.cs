@@ -32,12 +32,35 @@ namespace DICES
             //Console.WriteLine(generator.Next(1,7));
             //Console.ReadKey();
 
-            var rand = new Random();
+            var rand1 = new Random();
             Console.WriteLine("Five random integers between 1 and 6:");
             for (int ctr = 0; ctr <= 4; ctr++)
-                Console.Write("{0,6:N0}", rand.Next(1, 7));
+                Console.Write("{0,6}", rand1.Next(1, 7));
             Console.WriteLine();
 
+            var rand2 = new Random();
+            Console.WriteLine("Five random integers between 1 and 6:");
+            for (int ctr = 0; ctr <= 4; ctr++)
+                Console.Write("{0,6}", rand2.Next(1, 7));
+            Console.WriteLine();
+
+            var rand3 = new Random();
+            Console.WriteLine("Five random integers between 1 and 6:");
+            for (int ctr = 0; ctr <= 4; ctr++)
+                Console.Write("{0,6:N0}", rand3.Next(1, 7));
+            Console.WriteLine();
+
+            var rand4 = new Random();
+            Console.WriteLine("Five random integers between 1 and 6:");
+            for (int ctr = 0; ctr <= 4; ctr++)
+                Console.Write("{0,6:N0}", rand4.Next(1, 7));
+            Console.WriteLine();
+
+            var rand5 = new Random();
+            Console.WriteLine("Five random integers between 1 and 6:");
+            for (int ctr = 0; ctr <= 4; ctr++)
+                Console.Write("{0,6:N0}", rand5.Next(1, 7));
+            Console.WriteLine();
         }
     }
 
