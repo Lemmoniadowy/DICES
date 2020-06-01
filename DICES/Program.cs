@@ -3,8 +3,8 @@
 namespace DICES
 {
     class Program
-    {
-        static void Main(string[] args)
+    { 
+        static void Opis()
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("Kościany Poker ver.0.1 - GitHub 1st Project Pull");
@@ -21,6 +21,19 @@ namespace DICES
             Console.WriteLine("Z góry określamy możliwe argumenty dla klasy Dice - 1,2,3,4,5,6 - tyle jest możliwych wyników rzutu");
             Console.WriteLine("Z góry określamy możliwe miejsca dla wyniku - 5 - tyle ile kart w Pokerze Omaha jest na ręku.");
             Console.ReadKey();
-         }
+        }
     }
-}
+            class Dice
+                    {
+                    static void Main(string[] args)
+                           {
+                            
+                            Random generator = new Random(0);
+                                for (int i = 1; i < 6; i++)
+                            Console.WriteLine(generator.Next(5));
+                            Console.ReadKey();
+
+                           }
+                    }
+    }
+
