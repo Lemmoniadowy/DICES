@@ -3,7 +3,7 @@
 namespace DICES
 {
     class Program
-    { 
+    {
         static void Opis()
         {
             Console.WriteLine("Hello World!");
@@ -21,25 +21,25 @@ namespace DICES
             Console.WriteLine("Z góry określamy możliwe argumenty dla klasy Dice - 1,2,3,4,5,6 - tyle jest możliwych wyników rzutu");
             Console.WriteLine("Z góry określamy możliwe miejsca dla wyniku - 5 - tyle ile kart w Pokerze Omaha jest na ręku.");
             Console.ReadKey();
-        }
-    }
-            class Dice
-                    {
-                    static void Main(string[] args)
-                           {
+        }   
+        static void Main()
+        {
+
+            Opis();
 
             //Random generator = new Random(0);
             //    for (int i = 1; i < 6; i++)
             //Console.WriteLine(generator.Next(1,7));
             //Console.ReadKey();
+
             var rand = new Random();
             Console.WriteLine("Five random integers between 1 and 6:");
             for (int ctr = 0; ctr <= 4; ctr++)
-                Console.Write("{0,8:N0}", rand.Next(1, 7));
+                Console.Write("{0,6:N0}", rand.Next(1, 7));
             Console.WriteLine();
 
         }
-                    }
-
     }
+
+}
 
