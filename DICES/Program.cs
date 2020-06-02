@@ -27,6 +27,11 @@ namespace DICES
 
             Opis();
 
+            Console.Write("Enter the name of Player 1: ");
+            string Player1 = Console.ReadLine();
+            Console.Write("Enter the name of Player 2: ");
+            string Player2 = Console.ReadLine();
+
             //Random generator = new Random(0);
             //    for (int i = 1; i < 6; i++)
             //Console.WriteLine(generator.Next(1,7));
