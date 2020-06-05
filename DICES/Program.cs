@@ -22,6 +22,11 @@ namespace DICES
             Console.WriteLine("Z góry określamy możliwe argumenty dla klasy Dice - 1,2,3,4,5,6 - tyle jest możliwych wyników rzutu");
             Console.WriteLine("Z góry określamy możliwe miejsca dla wyniku - 5 - tyle ile kart w Pokerze Omaha jest na ręku.");
             Console.ReadKey();
+            Console.WriteLine("Losowanie, dwie kostki, porównani wyniku.");
+            Console.WriteLine("Druga kostka pozostaje zakryta - blackgammon - zakład z komputerem.");
+            Console.WriteLine("Przy okazji można dodać więcej opcji, dobra kodzim na sucho na służbowej maszynce i będziemy przepisywać do domowego potato PC");
+
+
         }   
         static void Main()
         {
