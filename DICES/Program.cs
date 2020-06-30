@@ -1,10 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RandomDices
+namespace DICES
 {
     class Program
     {
-        static void Opis()
+        static void Main(string []args)
+        {
+            ThrowOfDices.DrawCubeOutline(0, 0);
+            Console.ReadKey();
+        }
+
+        /*static void Opis()
         {
             Console.WriteLine("Random Number Game");
             Console.WriteLine("Trolololo! Sync check.");
@@ -36,8 +46,8 @@ namespace RandomDices
             }
 
 
-        }
-    }
+        }*/
+    } 
 
 }
 

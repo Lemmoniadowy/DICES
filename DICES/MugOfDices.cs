@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DicePoker
+namespace DICES
 {
     class Throws : Dice
     {
@@ -21,11 +21,11 @@ namespace DicePoker
         public void setUpMug()
         {
             int i = 0;
-            foreach (DICECOLOR c in Enum.GetValues(typeof(DICECOLOR)))
+            foreach (SUIT c in Enum.GetValues(typeof(SUIT)))
             {
-                foreach (DICETHROW t in Enum.GetValues(typeof(DICETHROW)))
+                foreach (THROW t in Enum.GetValues(typeof(THROW)))
                 {
-                    mug[i] = new Dice { Color = c, Throw = t };
+                    mug[i] = new Dice { MyColor = c, MyThrow = t };
                     i++;
                 }
 

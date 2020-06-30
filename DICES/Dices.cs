@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DicePoker
+namespace DICES
 {
     class Dice
     {
-        public enum DICECOLOR
+        public enum SUIT
         {
-            WHITE,
-            BLACK,
-            ORANGE,
-            PURPULE,
-            GREEN,
+            HEARTS,
+            DIAMONDS,
+            CLUBS,
+            SPADES,
         }
-        public enum DICETHROW
+        public enum THROW
         {
             ONE = 1, 
             TWO, 
@@ -25,7 +24,7 @@ namespace DicePoker
             FIVE, 
             SIX
         }
-        public DICECOLOR Color { get; set; }
-        public DICETHROW Throw { get; set; }
+        public SUIT MyColor { get; set; }
+        public THROW MyThrow { get; set; }
     }
 }
