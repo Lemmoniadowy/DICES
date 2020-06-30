@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DICES
+namespace MugOfDieces
 {
     class Throws : Dice
     {
@@ -18,7 +18,7 @@ namespace DICES
 
         public Dice[] GetDices { get { return mug; } }
 
-        public void setUpMug ()
+        public void setUpMug()
         {
             int i = 0;
             foreach (DICECOLOR c in Enum.GetValues(typeof(DICECOLOR)))
@@ -26,10 +26,30 @@ namespace DICES
                 foreach (DICETHROW t in Enum.GetValues(typeof(DICETHROW)))
                 {
                     mug[i] = new Dice { Color = c, Throw = t };
+                    i++;
                 }
-                
+
             }
 
+            MugShuffler();
+
+        }
+
+        public void MugShuffler ()
+        {
+            Random rand = new Random();
+            Dice temp; 
+
+            for (int shuffleTimes = 0; shuffleTimes <100; shuffleTimes++)
+            {
+                for (int i = 0; i < NUMBER_OF_DICES; i++ )
+                {
+                    int secondDiceIndex = rand.Next(5);
+                    temp = mug[i];
+                    mug[i] = mug[secondDiceIndex];
+                    mug[secondDiceIndex] = temp;
+                }
+            }
         }
 
     }
