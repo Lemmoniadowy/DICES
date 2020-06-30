@@ -7,7 +7,7 @@ namespace RandomDices
         static void Opis()
         {
             Console.WriteLine("Random Number Game");
-            Console.WriteLine("Trolololo! Sync check.);
+            Console.WriteLine("Trolololo! Sync check.");
 
         }   
         static void Main(string []args)
