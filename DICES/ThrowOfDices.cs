@@ -56,6 +56,12 @@ namespace DICES
                     Console.ForegroundColor = ConsoleColor.Black;
                     break;
             }
+
+            Console.SetCursorPosition(x, y);
+            Console.Write(dice);
+            Console.SetCursorPosition(x + 4, y + 7);
+            Console.Write(dice.MyThrow);
+
         }
     }
 }
