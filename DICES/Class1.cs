@@ -8,10 +8,24 @@ namespace DICES
 {
     class Dice
     {
+        public enum DICECOLOR
+        {
+            WHITE,
+            BLACK,
+            ORANGE,
+            PURPULE,
+            GREEN,
+        }
         public enum DICETHROW
         {
-            ONE = 1, TWO, THREE, FOUR, FIVE, SIX
+            ONE = 1, 
+            TWO, 
+            THREE, 
+            FOUR, 
+            FIVE, 
+            SIX
         }
+        public DICECOLOR Color { get; set; }
         public DICETHROW Throw { get; set; }
     }
 }
