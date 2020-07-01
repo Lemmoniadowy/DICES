@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class Dice
+    class Card
     {
         public enum SUIT
         {
-            HEARTH,
+            RED,
             GREEN,
             YELLOW,
             BLUE,
             MAGENTA,
         }
-        public enum THROW
+        public enum VALUE
         {
-            ONE = 1, 
+            ONE, 
             TWO, 
             THREE, 
             FOUR, 
             FIVE, 
             SIX
         }
-        public SUIT MyColor { get; set; }
-        public THROW MyThrow { get; set; }
+        public SUIT MySuit { get; set; }
+        public VALUE MyValue { get; set; }
     }
 }

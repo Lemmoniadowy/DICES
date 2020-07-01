@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class DeckOfDices : Dice
+    class DeckOfCards : Card
     {
         const int NUMBER_OF_DICES = 10;
-        private Dice[] deck; 
+        private Card[] deck; 
         
-        public DeckOfDices()
+        public DeckOfCards()
         {
-            deck = new Dice[NUMBER_OF_DICES];
+            deck = new Card[NUMBER_OF_DICES];
         }
 
-        public Dice[] getDeck { get { return deck; } }
+        public Card[] getDeck { get { return deck; } }
 
         public void setUpDeck()
         {
             int i = 0;
-            foreach (SUIT c in Enum.GetValues(typeof(SUIT)))
+            foreach (SUIT s in Enum.GetValues(typeof(SUIT)))
             {
-                foreach (THROW t in Enum.GetValues(typeof(THROW)))
+                foreach (VALUE v in Enum.GetValues(typeof(VALUE)))
                 {
-                    deck[i] = new Dice { MyColor = c, MyThrow = t };                   
+                    deck[i] = new Card { MySuit = s, MyValue = v };                   
                 }
 
             }
@@ -37,7 +37,7 @@ namespace DICES
         public void MugShuffler ()
         {
             Random rand = new Random();
-            Dice temp; 
+            Card temp; 
 
             for (int shuffleTimes = 0; shuffleTimes <100; shuffleTimes++)
             {

@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class ShuffleOfDices : DeckOfDices
+    class DealCards : DeckOfCards
 
     {
-        private Dice[] playerHand;
-        private Dice[] computerHand;
-        private Dice[] sortedPlayerHand;
-        private Dice[] sortedComputerHand;
+        private Card[] playerHand;
+        private Card[] computerHand;
+        private Card[] sortedPlayerHand;
+        private Card[] sortedComputerHand;
 
-        public ShuffleOfDices()
+        public DealCards()
         {
-            playerHand = new Dice[5];
-            sortedPlayerHand = new Dice[5];
-            computerHand = new Dice[5];
-            sortedComputerHand = new Dice[5];
+            playerHand = new Card[5];
+            sortedPlayerHand = new Card[5];
+            computerHand = new Card[5];
+            sortedComputerHand = new Card[5];
 
         }
 
-        public void ThrowDice()
+        public void Deal()
         {
             setUpDeck();
             getHand();
-            /* sortDice(); */
-            displayDice();
+            /* sortCards(); */
+            displayCards();
             evaluateHands();
         }
 
@@ -42,14 +42,14 @@ namespace DICES
                 computerHand[i -5] = getDeck[i]; 
         }
 
-        /*public void sortDice()
+        /* public void sortCards()
         {
             var queryPlayer = from hand in playerHand
-                              orderby hand.MyThrow
+                              orderby hand.MyValue
                               select hand;
 
             var queryComputer = from hand in computerHand
-                              orderby hand.MyThrow
+                              orderby hand.MyValue
                               select hand;
 
             var index = 0;
@@ -68,7 +68,7 @@ namespace DICES
 
         }
         */
-        public void displayDice()
+        public void displayCards()
         {
             Console.Clear();
             int x = 0;
@@ -77,8 +77,8 @@ namespace DICES
             Console.WriteLine("PLAYER`S HAND");
             for (int  i = 0; i < 5; i++)
             {
-                ThrowOfDices.DrawCubeOutline(x, y);
-                ThrowOfDices.DrawDiceColorThrow(sortedPlayerHand[i], x, y);
+                DrawCards.DrawCubeOutline(x, y);
+                DrawCards.DrawCardSuitValue(sortedPlayerHand[i], x, y);
                 x++;             
             }            
             y = 15;
@@ -88,8 +88,8 @@ namespace DICES
             Console.WriteLine("COMPUTER`S HAND");         
             for (int i = 5; i < 10; i++)
             {
-                ThrowOfDices.DrawCubeOutline(x, y);
-                ThrowOfDices.DrawDiceColorThrow(sortedComputerHand[i - 5], x, y);
+                DrawCards.DrawCubeOutline(x, y);
+                DrawCards.DrawCardSuitValue(sortedComputerHand[i - 5], x, y);
                 x++;
             }
 

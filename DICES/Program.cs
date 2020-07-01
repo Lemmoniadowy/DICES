@@ -16,12 +16,12 @@ namespace DICES
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;            
             Console.Title = "POKER DICE GAME";
-            ShuffleOfDices dd = new ShuffleOfDices();
+            DealCards dc = new DealCards();
             bool quit = false;
 
             while (!quit)
             {
-                dd.ThrowDice();
+                dc.Deal();
 
                 char selection = ' ';
                 while (!selection.Equals('Y') && !selection.Equals('N'))
