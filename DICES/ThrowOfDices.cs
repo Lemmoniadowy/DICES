@@ -11,7 +11,8 @@ namespace DICES
     {
         public static void DrawCubeOutline(int xcord, int ycord)
         {
-            
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+
             int x = xcord * 12;
             int y = ycord;
                         
