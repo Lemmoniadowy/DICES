@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +28,7 @@ namespace DICES
         {
             setUpDeck();
             getHand();
-            sortDice();
+            /* sortDice(); */
             displayDice();
             evaluateHands();
         }
@@ -37,13 +36,13 @@ namespace DICES
         public void getHand()
         {
             for (int i = 0; i < 5; i++)
-                playerHand[i] = GetDices[i];
+                playerHand[i] = getDeck[i];
 
-            for (int i = 5; i < 10; i++)
-                 computerHand[i - 5] = GetDices[i];
+           /*  for (int i = 5; i < 10; i++)
+                computerHand[i = 5] = getDeck[i]; */
         }
 
-        public void sortDice()
+        /* public void sortDice()
         {
             var queryPlayer = from hand in playerHand
                               orderby hand.MyThrow
@@ -68,7 +67,7 @@ namespace DICES
             }
 
         }
-
+        */
         public void displayDice()
         {
             Console.Clear();
@@ -87,6 +86,7 @@ namespace DICES
             Console.SetCursorPosition(x, y);
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("COMPUTER`S HAND");
+            Console.WriteLine();
             for (int i = 5; i < 10; i++)
             {
                 ThrowOfDices.DrawCubeOutline(x, y);

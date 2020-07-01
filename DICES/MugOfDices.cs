@@ -16,11 +16,11 @@ namespace DICES
             deck = new Dice[NUMBER_OF_DICES];
         }
 
-        public Dice[] GetDices { get { return deck; } }
+        public Dice[] getDeck { get { return deck; } }
 
         public void setUpDeck()
         {
-            int i = 1;
+            int i = 0;
             foreach (SUIT c in Enum.GetValues(typeof(SUIT)))
             {
                 foreach (THROW t in Enum.GetValues(typeof(THROW)))

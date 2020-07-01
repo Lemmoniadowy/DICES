@@ -39,6 +39,8 @@ namespace DICES
                 }
             }
 
+            Console.ReadKey();
+
         }
         
     } 

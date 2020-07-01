@@ -11,7 +11,7 @@ namespace DICES
     {
         public static void DrawCubeOutline(int xcord, int ycord)
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.White;
 
             int x = xcord * 12;
             int y = ycord;
@@ -36,7 +36,7 @@ namespace DICES
             int x = xcord * 12;
             int y = ycord;            
 
-            switch (dice.MyColor)
+            /* switch (dice.MyColor)
             {
                 case Dice.SUIT.RED:                   
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -54,11 +54,11 @@ namespace DICES
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     break;
             }
-
+            */
             Console.SetCursorPosition(x + 3, y + 3);
-            Console.Write(dice.MyColor);
+            /* Console.Write(dice.MyColor); */
             Console.SetCursorPosition(x + 4, y + 7);
-            Console.Write(dice.MyThrow);
+            /* Console.Write(dice.MyThrow); */
 
         }
     }
