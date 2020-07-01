@@ -10,7 +10,7 @@ namespace DICES
     {
         public enum SUIT
         {
-            RED,
+            HEARTH,
             GREEN,
             YELLOW,
             BLUE,

@@ -38,11 +38,11 @@ namespace DICES
             for (int i = 0; i < 5; i++)
                 playerHand[i] = getDeck[i];
 
-           /*  for (int i = 5; i < 10; i++)
-                computerHand[i = 5] = getDeck[i]; */
+             for (int i = 5; i < 10; i++)
+                computerHand[i -5] = getDeck[i]; 
         }
 
-        /* public void sortDice()
+        /*public void sortDice()
         {
             var queryPlayer = from hand in playerHand
                               orderby hand.MyThrow
@@ -79,14 +79,13 @@ namespace DICES
             {
                 ThrowOfDices.DrawCubeOutline(x, y);
                 ThrowOfDices.DrawDiceColorThrow(sortedPlayerHand[i], x, y);
-                x++;
-            }
+                x++;             
+            }            
             y = 15;
-            x = 0;
-            Console.SetCursorPosition(x, y);
+            x = 0;            
+            Console.SetCursorPosition(x, 14);
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("COMPUTER`S HAND");
-            Console.WriteLine();
+            Console.WriteLine("COMPUTER`S HAND");         
             for (int i = 5; i < 10; i++)
             {
                 ThrowOfDices.DrawCubeOutline(x, y);

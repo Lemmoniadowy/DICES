@@ -8,7 +8,7 @@ namespace DICES
 {
     class DeckOfDices : Dice
     {
-        const int NUMBER_OF_DICES = 5;
+        const int NUMBER_OF_DICES = 10;
         private Dice[] deck; 
         
         public DeckOfDices()
@@ -25,8 +25,7 @@ namespace DICES
             {
                 foreach (THROW t in Enum.GetValues(typeof(THROW)))
                 {
-                    deck[i] = new Dice { MyColor = c, MyThrow = t };
-                    
+                    deck[i] = new Dice { MyColor = c, MyThrow = t };                   
                 }
 
             }
