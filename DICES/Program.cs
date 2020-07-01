@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Text.Encoding;
+
 
 namespace DICES
 {
@@ -11,11 +11,12 @@ namespace DICES
     {
         static void Main(string []args)
         {
+           
             ThrowOfDices.DrawCubeOutline(0, 0);
 
             Dice dice = new Dice();
-            dice.MyColor = Dice.SUIT.HEARTS;
-            dice.MyThrow = Dice.THROW.FIVE;
+            dice.MyColor = Dice.SUIT.GREEN;
+            dice.MyThrow = Dice.THROW.TWO;
             ThrowOfDices.DrawDiceColorThrow(dice, 0, 0);
 
 

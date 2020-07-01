@@ -10,10 +10,11 @@ namespace DICES
     {
         public enum SUIT
         {
-            HEARTS,
-            DIAMONDS,
-            CLUBS,
-            SPADES,
+            RED,
+            GREEN,
+            YELLOW,
+            BLUE,
+            MAGENTA,
         }
         public enum THROW
         {

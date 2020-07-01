@@ -11,54 +11,51 @@ namespace DICES
     {
         public static void DrawCubeOutline(int xcord, int ycord)
         {
-            Console.ForegroundColor = ConsoleColor.White;
-
-            int x = xcord * 6;
+            
+            int x = xcord * 12;
             int y = ycord;
-
+                        
             Console.SetCursorPosition(x, y);
-            Console.Write(" ____\n");
+            Console.Write(" __________\n");
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 10; i++)
             {
                 Console.SetCursorPosition(x, y + 1 + i);
 
-                if (i != 3)
-                    Console.WriteLine("|    |");
+                if (i != 9)
+                    Console.WriteLine("|          |");
                 else
-                    Console.WriteLine("|____|");
+                    Console.WriteLine("|__________|");
             }
         }
 
         public static void DrawDiceColorThrow(Dice dice, int xcord, int ycord)
         {
             char cubeColor = ' ';
-            int x = xcord * 6;
-            int y = ycord;
-
+            int x = xcord * 12;
+            int y = ycord;            
 
             switch (dice.MyColor)
             {
-                case Dice.SUIT.HEARTS:
-                    cubeColor = Encoding.GetEncoding(437).GetChars(new byte[] { 3 })[0];
+                case Dice.SUIT.RED:                   
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
-                case Dice.SUIT.DIAMONDS:
-                    cubeColor = Encoding.GetEncoding(437).GetChars(new byte[] { 4 })[0];
-                    Console.ForegroundColor = ConsoleColor.Red;
+                case Dice.SUIT.GREEN:                    
+                    Console.ForegroundColor = ConsoleColor.Green;
                     break;
-                case Dice.SUIT.CLUBS:
-                    cubeColor = Encoding.GetEncoding(437).GetChars(new byte[] { 5 })[0];
-                    Console.ForegroundColor = ConsoleColor.Black;
+                case Dice.SUIT.YELLOW:                    
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
-                case Dice.SUIT.SPADES:
-                    cubeColor = Encoding.GetEncoding(437).GetChars(new byte[] { 6 })[0];
-                    Console.ForegroundColor = ConsoleColor.Black;
+                case Dice.SUIT.BLUE:                    
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    break;
+                case Dice.SUIT.MAGENTA:                    
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     break;
             }
 
-            Console.SetCursorPosition(x, y);
-            Console.Write(dice);
+            Console.SetCursorPosition(x + 3, y + 3);
+            Console.Write(dice.MyColor);
             Console.SetCursorPosition(x + 4, y + 7);
             Console.Write(dice.MyThrow);
 
