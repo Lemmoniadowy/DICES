@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,17 +10,35 @@ namespace DICES
 {
     class Program
     {
-        static void Main(string []args)
+        static void Main(string[] args)
         {
-           
-            ThrowOfDices.DrawCubeOutline(0, 0);
+            Console.SetWindowSize(65, 40);
+            Console.BufferWidth = 65;
+            Console.BufferHeight = 40;            
+            Console.Title = "POKER DICE GAME";
+            ShuffleOfDices dd = new ShuffleOfDices();
+            bool quit = false;
 
-            Dice dice = new Dice();
-            dice.MyColor = Dice.SUIT.GREEN;
-            dice.MyThrow = Dice.THROW.TWO;
-            ThrowOfDices.DrawDiceColorThrow(dice, 0, 0);
+            while (!quit)
+            {
+                dd.ThrowDice();
 
-            Console.ReadKey();
+                char selection = ' ';
+                while (!selection.Equals('Y') && !selection.Equals('N'))
+                {
+                    Console.WriteLine("Play again? Y-N");
+                    selection = Convert.ToChar(Console.ReadLine().ToUpper());
+
+                    if (selection.Equals('Y'))
+                        quit = false;
+                    else if (selection.Equals('N'))
+                        quit = true;
+                    else
+                        Console.WriteLine("Invalid Selection. Try again.");
+                    
+                }
+            }
+
         }
         
     } 

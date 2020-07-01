@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class Throws : Dice
+    class DeckOfDices : Dice
     {
         const int NUMBER_OF_DICES = 5;
-        private Dice[] mug; 
+        private Dice[] deck; 
         
-        public Throws()
+        public DeckOfDices()
         {
-            mug = new Dice[NUMBER_OF_DICES];
+            deck = new Dice[NUMBER_OF_DICES];
         }
 
-        public Dice[] GetDices { get { return mug; } }
+        public Dice[] GetDices { get { return deck; } }
 
-        public void setUpMug()
+        public void setUpDeck()
         {
-            int i = 0;
+            int i = 1;
             foreach (SUIT c in Enum.GetValues(typeof(SUIT)))
             {
                 foreach (THROW t in Enum.GetValues(typeof(THROW)))
                 {
-                    mug[i] = new Dice { MyColor = c, MyThrow = t };
-                    i++;
+                    deck[i] = new Dice { MyColor = c, MyThrow = t };
+                    
                 }
 
             }
@@ -45,9 +45,9 @@ namespace DICES
                 for (int i = 0; i < NUMBER_OF_DICES; i++ )
                 {
                     int secondDiceIndex = rand.Next(5);
-                    temp = mug[i];
-                    mug[i] = mug[secondDiceIndex];
-                    mug[secondDiceIndex] = temp;
+                    temp = deck[i];
+                    deck[i] = deck[secondDiceIndex];
+                    deck[secondDiceIndex] = temp;
                 }
             }
         }
