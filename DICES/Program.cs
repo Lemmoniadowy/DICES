@@ -12,16 +12,17 @@ namespace DICES
     {
         static void Main(string[] args)
         {
+            Console.BackgroundColor= ConsoleColor.DarkGreen;
             Console.SetWindowSize(65, 40);
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;            
             Console.Title = "POKER DICE GAME";
-            DealCards dc = new DealCards();
+             dd = new ();
             bool quit = false;
 
             while (!quit)
             {
-                dc.Deal();
+                dd.Deal();
 
                 char selection = ' ';
                 while (!selection.Equals('Y') && !selection.Equals('N'))

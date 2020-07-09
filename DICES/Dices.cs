@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class Card
-    {
-        public enum SUIT
-        {
-            RED,
-            GREEN,
-            YELLOW,
-            BLUE,
-            MAGENTA,
-        }
+    class Dice
+    {        
         public enum VALUE
         {
             ONE, 
@@ -24,8 +16,7 @@ namespace DICES
             FOUR, 
             FIVE, 
             SIX
-        }
-        public SUIT MySuit { get; set; }
+        }      
         public VALUE MyValue { get; set; }
     }
 }

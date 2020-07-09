@@ -7,20 +7,16 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class DealCards : DeckOfCards
+    class DealCards : MugOfDices
 
     {
-        private Card[] playerHand;
-        private Card[] computerHand;
-        private Card[] sortedPlayerHand;
-        private Card[] sortedComputerHand;
-
+        private Dice[] playerHand;
+        private Dice[] computerHand;    
+        
         public DealCards()
         {
-            playerHand = new Card[5];
-            sortedPlayerHand = new Card[5];
-            computerHand = new Card[5];
-            sortedComputerHand = new Card[5];
+            playerHand = new Dice[5];            
+            computerHand = new Dice[5];            
 
         }
 
@@ -68,28 +64,28 @@ namespace DICES
 
         }
         */
-        public void displayCards()
+        public void displayDices()
         {
             Console.Clear();
             int x = 0;
             int y = 1;
-            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("PLAYER`S HAND");
             for (int  i = 0; i < 5; i++)
             {
-                DrawCards.DrawCubeOutline(x, y);
-                DrawCards.DrawCardSuitValue(sortedPlayerHand[i], x, y);
+                DrawDices.DrawDiceCubeOutline(x, y);
+                DrawDices.DrawDiceSuitValue(playerHand[i], x, y);
                 x++;             
             }            
             y = 15;
             x = 0;            
             Console.SetCursorPosition(x, 14);
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("COMPUTER`S HAND");         
             for (int i = 5; i < 10; i++)
             {
-                DrawCards.DrawCubeOutline(x, y);
-                DrawCards.DrawCardSuitValue(sortedComputerHand[i - 5], x, y);
+                DrawDices.DrawDiceCubeOutline(x, y);
+                DrawDices.DrawDiceSuitValue(computerHand[i - 5], x, y);
                 x++;
             }
 

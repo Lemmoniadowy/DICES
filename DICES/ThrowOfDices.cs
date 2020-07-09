@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class DrawCards
+    class DrawDices
     {
-        public static void DrawCubeOutline(int xcord, int ycord)
+        public static void DrawDiceCubeOutline(int xcord, int ycord)
         {
             
             Console.ForegroundColor = ConsoleColor.White;
@@ -31,19 +31,16 @@ namespace DICES
             }
         }
 
-        public static void DrawCardSuitValue(Card card, int xcord, int ycord)
-        {
-            CodePagesEncodingProvider.Instance.GetEncoding(437);
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
-            char cardSuit = ' ';
+        public static void DrawDiceSuitValue(Dice card, int xcord, int ycord)
+        {       
+        
+            char cardValue = ' ';
             int x = xcord * 12;
             int y = ycord;            
 
             /* switch(card.MySuit)
             {
-                case Card.SUIT.RED:
-                    cardSuit = Encoding.GetEncoding(437).GetChars(new byte[] { 3 })[0];
+                case Card.SUIT.RED:                    
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
                 case Card.SUIT.GREEN:                    
@@ -61,11 +58,9 @@ namespace DICES
                 
             }
             */
-            
-            Console.SetCursorPosition(x + 3, y + 3);
-            /* Console.Write(card.MySuit); */
+                        
             Console.SetCursorPosition(x + 4, y + 7);
-            /* Console.Write(card.MyValue); */
+            Console.Write(Dice.VALUE); 
 
         }
     }

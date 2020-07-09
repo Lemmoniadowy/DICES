@@ -6,50 +6,48 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
-    class DeckOfCards : Card
+    class MugOfDices : Dice
     {
         const int NUMBER_OF_DICES = 10;
-        private Card[] deck; 
+        private Dice[] deck; 
         
-        public DeckOfCards()
+        public MugOfDices()
         {
-            deck = new Card[NUMBER_OF_DICES];
+            deck = new Dice[NUMBER_OF_DICES];
         }
 
-        public Card[] getDeck { get { return deck; } }
+        public Dice[] getDeck { get { return deck; } }
 
         public void setUpDeck()
         {
-            int i = 0;
-            foreach (SUIT s in Enum.GetValues(typeof(SUIT)))
-            {
+            int i = 0;            
                 foreach (VALUE v in Enum.GetValues(typeof(VALUE)))
                 {
-                    deck[i] = new Card { MySuit = s, MyValue = v };                   
+                    deck[i] = new Dice { MyValue = v };                    
                 }
 
             }
 
-            MugShuffler();
+            // MugShuffler();
 
         }
 
-        public void MugShuffler ()
+        /* public void MugShuffler ()
         {
             Random rand = new Random();
-            Card temp; 
+            Dice temp; 
 
             for (int shuffleTimes = 0; shuffleTimes <100; shuffleTimes++)
             {
                 for (int i = 0; i < NUMBER_OF_DICES; i++ )
                 {
                     int secondDiceIndex = rand.Next(5);
-                    temp = deck[i];
-                    deck[i] = deck[secondDiceIndex];
-                    deck[secondDiceIndex] = temp;
+                    temp = dice[i];
+                    dice[i] = dice[secondDiceIndex];
+                    dice[secondDiceIndex] = temp;
                 }
             }
         }
-
+        */
     }
 }
