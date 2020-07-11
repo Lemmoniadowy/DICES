@@ -15,20 +15,20 @@ namespace DICES
             
             Console.ForegroundColor = ConsoleColor.White;
 
-            int x = xcord * 9;
+            int x = xcord * 5;
             int y = ycord;
                         
             Console.SetCursorPosition(x, y);
-            Console.Write(" ________\n");
+            Console.Write(" ______\n");
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Console.SetCursorPosition(x, y + 1 + i);
 
-                if (i != 7)
-                    Console.WriteLine("|          |");
+                if (i != 4)
+                    Console.WriteLine("|      |");
                 else
-                    Console.WriteLine("|__________|");
+                    Console.WriteLine("|______|");
             }
         }
 
@@ -61,8 +61,8 @@ namespace DICES
             
                         
             Console.SetCursorPosition(x + 4, y + 7);
-            Console.Write(diceVALUE); 
+            Console.Write(Dice.MyValue); 
 
-        }
+        } 
     }
 }

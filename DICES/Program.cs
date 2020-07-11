@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Drawing;
 
 namespace DICES
 {
@@ -12,7 +12,13 @@ namespace DICES
     {
         static void Main(string[] args)
         {
-            Console.BackgroundColor= ConsoleColor.DarkGreen;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.SetWindowSize(65, 40);
+            Console.BufferWidth = 65;
+            Console.BufferHeight = 40;
+            DrawDices.DrawDiceOutline(0, 0);
+            Console.ReadKey();
+            /* Console.BackgroundColor= ConsoleColor.DarkGreen;
             Console.SetWindowSize(65, 40);
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;            
@@ -41,7 +47,7 @@ namespace DICES
             }
 
             Console.ReadKey();
-
+            */
         }
         
     } 
