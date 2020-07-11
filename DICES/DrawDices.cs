@@ -7,60 +7,61 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
+    //rysowanie obszaru kości
     class DrawDices
     {
-        public static void DrawDiceCubeOutline(int xcord, int ycord)
+        public static void DrawDiceOutline(int xcord, int ycord)
         {
             
             Console.ForegroundColor = ConsoleColor.White;
 
-            int x = xcord * 12;
+            int x = xcord * 9;
             int y = ycord;
                         
             Console.SetCursorPosition(x, y);
-            Console.Write(" __________\n");
+            Console.Write(" ________\n");
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 8; i++)
             {
                 Console.SetCursorPosition(x, y + 1 + i);
 
-                if (i != 9)
+                if (i != 7)
                     Console.WriteLine("|          |");
                 else
                     Console.WriteLine("|__________|");
             }
         }
 
-        public static void DrawDiceSuitValue(Dice card, int xcord, int ycord)
+        public static void DrawDiceValue(Dice card, int xcord, int ycord)
         {       
         
-            char cardValue = ' ';
+            char diceValue = ' ';
             int x = xcord * 12;
             int y = ycord;            
 
-            /* switch(card.MySuit)
+            switch(card.MyValue)
             {
-                case Card.SUIT.RED:                    
+                case Dice.VALUE.ONE:                    
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
-                case Card.SUIT.GREEN:                    
+                case Dice.VALUE.TWO:                    
                     Console.ForegroundColor = ConsoleColor.Green;
                     break;
-                case Card.SUIT.YELLOW:                    
+                case Dice.VALUE.THREE:                    
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     break;
-                case Card.SUIT.BLUE:                                        
+                case Dice.VALUE.FOUR:                                        
                     Console.ForegroundColor = ConsoleColor.Blue;
                     break;
-                case Card.SUIT.MAGENTA:                   
+                case Dice.VALUE.FIVE:                   
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     break;
                 
             }
-            */
+            
                         
             Console.SetCursorPosition(x + 4, y + 7);
-            Console.Write(Dice.VALUE); 
+            Console.Write(diceVALUE); 
 
         }
     }

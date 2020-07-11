@@ -13,7 +13,7 @@ namespace DICES
         const int NUMBER_OF_DICES = 10;
         private Dice[] deck; 
         
-        //kości wpadają do kubka z ilością 10
+        //konstruktor kubka
         public MugOfDices()
         {
             deck = new Dice[NUMBER_OF_DICES];
@@ -28,17 +28,17 @@ namespace DICES
             int i = 0;            
                 foreach (VALUE v in Enum.GetValues(typeof(VALUE)))
                 {
-                    deck[i] = new Dice { MyValue = v };                    
-                }
-
-            }
-
-            MugShuffler();
+                    deck[i] = new Dice { MyValue = v };
+                    i++;
+                }            
+        // losujemy w tej samej public void (pobieramy i losujemy)
+         MugShuffler();
 
         }
-
-         public void MugShuffler ()
-        {
+        
+        // miksowanie, ustawiamy temp`a i mielimy układ 100 razy
+         public void MugShuffler()
+         {
             Random rand = new Random();
             Dice temp; 
 
@@ -47,12 +47,12 @@ namespace DICES
                 for (int i = 0; i < NUMBER_OF_DICES; i++ )
                 {
                     int secondDiceIndex = rand.Next(5);
-                    temp = dice[i];
-                    dice[i] = dice[secondDiceIndex];
-                    dice[secondDiceIndex] = temp;
+                    temp = deck[i];
+                    deck[i] = deck[secondDiceIndex];
+                    deck[secondDiceIndex] = temp;
                 }
             }
-        }
-        
-    }
+         }
+     }  
 }
+

@@ -16,8 +16,8 @@ namespace DICES
             Console.SetWindowSize(65, 40);
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;            
-            Console.Title = "POKER DICE GAME";
-             dd = new ();
+            Console.Title = "POKER DICES GAME";
+            Deal = new Dice ();
             bool quit = false;
 
             while (!quit)
