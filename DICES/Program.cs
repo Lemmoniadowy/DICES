@@ -12,11 +12,18 @@ namespace DICES
     {
         static void Main(string[] args)
         {
+            
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.SetWindowSize(65, 40);
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;
+            Console.Title = "POKER DICES GAME";
             DrawDices.DrawDiceOutline(0, 0);
+
+            Dice dice = new Dice();
+            dice.MyValue = Dice.VALUE.ONE;
+            DrawDices.DrawDiceValue(dice, 0, 0);
+
             Console.ReadKey();
             /* Console.BackgroundColor= ConsoleColor.DarkGreen;
             Console.SetWindowSize(65, 40);
