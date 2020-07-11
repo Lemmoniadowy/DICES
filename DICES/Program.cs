@@ -13,26 +13,16 @@ namespace DICES
         static void Main(string[] args)
         {
             
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.BackgroundColor = ConsoleColor.DarkGreen; // tło konsoli na ciemną zieleń
             Console.SetWindowSize(65, 40);
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;
-            Console.Title = "POKER DICES GAME";
-            DrawDices.DrawDiceOutline(0, 0);
+            Console.Title = "POKER DICES GAME"; //nazwa na pasku
 
-            Dice dice = new Dice();
-            dice.MyValue = Dice.VALUE.ONE;
-            DrawDices.DrawDiceValue(dice, 0, 0);
+            DealDices dd = new DealDices();
 
-            Console.ReadKey();
-            /* Console.BackgroundColor= ConsoleColor.DarkGreen;
-            Console.SetWindowSize(65, 40);
-            Console.BufferWidth = 65;
-            Console.BufferHeight = 40;            
-            Console.Title = "POKER DICES GAME";
-            Deal = new Dice ();
-            bool quit = false;
-
+            bool quit = false;            
+            
             while (!quit)
             {
                 dd.Deal();
@@ -41,6 +31,7 @@ namespace DICES
                 while (!selection.Equals('Y') && !selection.Equals('N'))
                 {
                     Console.WriteLine("Play again? Y-N");
+                    
                     selection = Convert.ToChar(Console.ReadLine().ToUpper());
 
                     if (selection.Equals('Y'))
@@ -52,9 +43,9 @@ namespace DICES
                     
                 }
             }
-
+            
             Console.ReadKey();
-            */
+            
         }
         
     } 
