@@ -6,18 +6,23 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
+    //Klasa MugOfDices musi mieć dostęp do Dice
     class MugOfDices : Dice
     {
+        //10 kości bo 2 graczy po 5 kości
         const int NUMBER_OF_DICES = 10;
         private Dice[] deck; 
         
+        //kości wpadają do kubka z ilością 10
         public MugOfDices()
         {
             deck = new Dice[NUMBER_OF_DICES];
         }
 
+        //pobieramy kości i tworzymy decka
         public Dice[] getDeck { get { return deck; } }
 
+        //ustawiamy decka
         public void setUpDeck()
         {
             int i = 0;            
@@ -28,11 +33,11 @@ namespace DICES
 
             }
 
-            // MugShuffler();
+            MugShuffler();
 
         }
 
-        /* public void MugShuffler ()
+         public void MugShuffler ()
         {
             Random rand = new Random();
             Dice temp; 
@@ -48,6 +53,6 @@ namespace DICES
                 }
             }
         }
-        */
+        
     }
 }

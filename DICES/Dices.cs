@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DICES
 {
+    //klasa Dice
     class Dice
     {        
+        // values set 
         public enum VALUE
         {
             ONE, 
@@ -16,7 +18,9 @@ namespace DICES
             FOUR, 
             FIVE, 
             SIX
-        }      
+        }
+        
+        // get set properties 
         public VALUE MyValue { get; set; }
     }
 }
