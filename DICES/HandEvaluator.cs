@@ -36,7 +36,7 @@ namespace DICES
         private Dice[] dices;
         private HandValue handValue;
 
-        public HandEvaluator (Dice[] sortedHand)
+        public HandEvaluator(Dice[] sortedHand)
         {
             oneSum = 0;
             twoSum = 0;
@@ -58,14 +58,51 @@ namespace DICES
             set { handValue = value; }
         }
 
-        public Dice [] Dices
+        public Dice[] Dices
         {
             get { return dices; }
             set
             {
                 dices[0] = value[0];
+                dices[1] = value[1];
+                dices[2] = value[2];
+                dices[3] = value[3];
+                dices[4] = value[4];
+
             }
 
+        }
+
+        public Dice EvaluateDice()
+        {
+            getNumberOfDice();
+        }
+
+        public void getNumberOfDice()
+        {
+            foreach (var element in Dice)
+            {
+                if (element.MyValue == Dice.VALUE.ONE)
+                    oneSum++;
+                else if (element.MyValue == Dice.VALUE.TWO)
+                    twoSum++;
+                else if (element.MyValue == Dice.VALUE.THREE)
+                    threeSum++;
+                else if (element.MyValue == Dice.VALUE.FOUR)
+                    fourSum++;
+                else if (element.MyValue == Dice.VALUE.FIVE)
+                    fiveSum++;
+                else if (element.MyValue == Dice.VALUE.SIX)
+                    sixSum++;
+                else if (element.MyValue == Dice.VALUE.SEVEN)
+                    sevenSum++;
+                else if (element.MyValue == Dice.VALUE.EIGHT)
+                    eightSum++;
+                else if (element.MyValue == Dice.VALUE.NINE)
+                    nineSum++;
+                else if (element.MyValue == Dice.VALUE.TEN)
+                    tenSum++;
+            }
         }
     }
 }
