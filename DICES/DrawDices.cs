@@ -39,7 +39,7 @@ namespace DICES
 
             string MyValue = " ";
             int x = xcord * 8;
-            int y = ycord * 1;            
+            int y = ycord;            
 
             switch(dice.MyValue)
             {
@@ -72,7 +72,7 @@ namespace DICES
                     break;
                 case Dice.VALUE.TEN:
                     Console.Write("TEN");
-                    break;
+                    break;                    
             }        
             
             // rysowanie kości na ekranie konsoli

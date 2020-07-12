@@ -11,7 +11,7 @@ namespace DICES
 {
     public enum Hand
     {
-        Nothing,
+        Nothing,        
         OnePair,
         TwoPairs,
         ThreeKind,
@@ -152,8 +152,8 @@ namespace DICES
             if (OnePair())
             {
                 return Hand.OnePair;
-            }
-        
+            }            
+
             else return Hand.Nothing;
             
         }
