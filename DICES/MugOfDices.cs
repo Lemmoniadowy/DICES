@@ -48,10 +48,10 @@ namespace DICES
             {
                 for (int i = 0; i < NUMBER_OF_DICES; i++ )
                 {
-                    int firstDiceIndex = rand.Next(5);
+                    int secondDiceIndex = rand.Next(5);
                     temp = deck[i];
-                    deck[i] = deck[firstDiceIndex];
-                    deck[firstDiceIndex] = temp;
+                    deck[i] = deck[secondDiceIndex];
+                    deck[secondDiceIndex] = temp;
                 }
             }
          }
