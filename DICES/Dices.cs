@@ -22,6 +22,7 @@ namespace DICES
             EIGHT,
             NINE,
             TEN,
+            
         }
         
         // get set properties 

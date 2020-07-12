@@ -14,10 +14,10 @@ namespace DICES
         {
             
             Console.BackgroundColor = ConsoleColor.DarkGreen; // tło konsoli na ciemną zieleń
-            Console.SetWindowSize(65, 40);
+            Console.SetWindowSize(65, 40); //ustawienie okienka konsoli
             Console.BufferWidth = 65;
             Console.BufferHeight = 40;
-            Console.Title = "POKER DICES GAME"; //nazwa na pasku
+            Console.Title = "K10 POKER DICES GAME"; //nazwa na pasku
 
             DealDices dd = new DealDices();
 

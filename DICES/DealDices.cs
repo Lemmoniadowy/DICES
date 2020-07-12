@@ -41,6 +41,7 @@ namespace DICES
                 computerHand[i - 5] = getDeck[i];
         }
 
+        //linq do sortowania
         public void sortDices()
         {
             var queryPlayer = from hand in playerHand
@@ -81,16 +82,15 @@ namespace DICES
                 DrawDices.DrawDiceValue(sortedPlayerHand[i], x, y);
                 x++;
             }
-            y = 9;
+
             x = 0;
+            y = 12;
+
 
             //pokazuje rękę komputerowego przeciwnika
-
-            
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("        ");
-            Console.WriteLine("COMPUTER'S HAND");
-            Console.SetCursorPosition(x, 9);
+            Console.SetCursorPosition(x, 11);
+            Console.ForegroundColor = ConsoleColor.DarkRed;            
+            Console.WriteLine("COMPUTER'S HAND");            
             for (int i = 5; i < 10; i++)
             {
                 DrawDices.DrawDiceOutline(x, y);

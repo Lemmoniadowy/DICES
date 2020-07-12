@@ -21,11 +21,11 @@ namespace DICES
             Console.Write(" _______\n");
 
             // pętelka do rysowania kości i dolnej krawędzi
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Console.SetCursorPosition(x, y + 1 + i);
 
-                if (i != 5)
+                if (i != 4)
                     Console.WriteLine("|        | "); // boki
                 else
                     Console.WriteLine("|________| "); // dół
@@ -38,7 +38,7 @@ namespace DICES
 
             string MyValue = " ";
             int x = xcord * 8;
-            int y = ycord;            
+            int y = ycord * 1;            
 
             switch(dice.MyValue)
             {
@@ -60,11 +60,22 @@ namespace DICES
                 case Dice.VALUE.SIX:
                     Console.Write("SIX");
                     break;
-                
+                case Dice.VALUE.SEVEN:
+                    Console.Write("SEVEN");
+                    break;
+                case Dice.VALUE.EIGHT:
+                    Console.Write("EIGHT");
+                    break;
+                case Dice.VALUE.NINE:
+                    Console.Write("NINE");
+                    break;
+                case Dice.VALUE.TEN:
+                    Console.Write("TEN");
+                    break;
             }        
             
             // rysowanie kości na ekranie konsoli
-            Console.SetCursorPosition(x + 2, y + 2);
+            Console.SetCursorPosition(x + 2, y + 3);
             Console.Write(dice.MyValue); 
 
         } 
