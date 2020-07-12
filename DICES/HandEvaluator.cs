@@ -76,11 +76,27 @@ namespace DICES
         public Dice EvaluateDice()
         {
             getNumberOfDice();
+            if (FourOfKind())
+                return Dice.FourKind;
+            else if (FullHouse())
+                return Dice.FullHouse;
+            else if (Straight())
+                return Dice.Straight;
+            else if (ThreeOfKind())
+                return Dice.ThreeOfKind;
+            else if (TwoPairs())
+                return Dice.TwoPairs;
+            else if (OnePair())
+                return Dice.OnePair;
+
+
+            handValue.HighDice = (int)dices[4].MyValue;
+            return Dice.Nothing;
         }
 
         public void getNumberOfDice()
         {
-            foreach (var element in Dice)
+            foreach (var element in Dices)
             {
                 if (element.MyValue == Dice.VALUE.ONE)
                     oneSum++;
@@ -105,7 +121,7 @@ namespace DICES
             }
         }
 
-        private bool FourKind()
+        private bool FourOfKind()
         {
             if(dices[0].MyValue == dices[1].MyValue && dices[0].MyValue == dices[2].MyValue && dices[0].MyValue == dices[3].MyValue)
             {

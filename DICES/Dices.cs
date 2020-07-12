@@ -27,5 +27,12 @@ namespace DICES
         
         // get set properties 
         public VALUE MyValue { get; set; }
+        public static Dice FourKind { get; protected set; }
+        public static Dice FullHouse { get; protected set; }
+        public static Dice Straight { get; protected set; }
+        public static Dice ThreeOfKind { get; protected set; }
+        public static Dice TwoPairs { get; protected set; }
+        public static Dice OnePair { get; protected set; }
+        public static Dice Nothing { get; protected set; }
     }
 }
