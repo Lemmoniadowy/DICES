@@ -25,7 +25,7 @@ namespace DICES
         {
             setUpDeck();
             getHand();
-            sortDices();
+            sortDices();            
             drawDices();
             //evaluateHands();
         }

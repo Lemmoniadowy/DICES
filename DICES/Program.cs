@@ -32,6 +32,7 @@ namespace DICES
                 {
                     Console.WriteLine("Play again? Y-N");
                     
+                    
                     selection = Convert.ToChar(Console.ReadLine().ToUpper());
 
                     if (selection.Equals('Y'))

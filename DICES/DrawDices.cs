@@ -13,12 +13,12 @@ namespace DICES
         //obszar kości 5, aby w miarę był kwadrat i mieścił się napis wartości
         public static void DrawDiceOutline(int xcord, int ycord)
         {
-            
-            int x = xcord * 6;
+
+            int x = xcord * 8;
             int y = ycord;
                         
             Console.SetCursorPosition(x, y);            
-            Console.Write(" ______\n");
+            Console.Write(" _______\n");
 
             // pętelka do rysowania kości i dolnej krawędzi
             for (int i = 0; i < 6; i++)
@@ -26,18 +26,18 @@ namespace DICES
                 Console.SetCursorPosition(x, y + 1 + i);
 
                 if (i != 5)
-                    Console.WriteLine("|      | "); // boki
+                    Console.WriteLine("|        | "); // boki
                 else
-                    Console.WriteLine("|______| "); // dół
+                    Console.WriteLine("|________| "); // dół
             }
         }
 
         // wpisanie wartości do obszaru kości
-        public static void DrawDiceValue(Dice dice, int xcord, int ycord)
+         public static void DrawDiceValue(Dice dice, int xcord, int ycord)
         {
 
             string MyValue = " ";
-            int x = xcord;
+            int x = xcord * 8;
             int y = ycord;            
 
             switch(dice.MyValue)
@@ -64,7 +64,7 @@ namespace DICES
             }        
             
             // rysowanie kości na ekranie konsoli
-            Console.SetCursorPosition(x + 2, y + 3);
+            Console.SetCursorPosition(x + 2, y + 2);
             Console.Write(dice.MyValue); 
 
         } 

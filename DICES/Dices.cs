@@ -12,12 +12,16 @@ namespace DICES
         // values set 
         public enum VALUE
         {
-            ONE, 
+            ONE = 1, 
             TWO, 
             THREE, 
             FOUR, 
             FIVE, 
-            SIX
+            SIX,
+            SEVEN,
+            EIGHT,
+            NINE,
+            TEN,
         }
         
         // get set properties 
