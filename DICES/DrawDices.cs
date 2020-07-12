@@ -26,9 +26,9 @@ namespace DICES
                 Console.SetCursorPosition(x, y + 1 + i);
 
                 if (i != 4)
-                    Console.WriteLine("|        | "); // boki
+                    Console.WriteLine("|       | "); // boki
                 else
-                    Console.WriteLine("|________| "); // dół
+                    Console.WriteLine("|_______| "); // dół
             }
         }
 
