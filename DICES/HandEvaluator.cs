@@ -49,6 +49,7 @@ namespace DICES
             nineSum = 0;
             tenSum = 0;
             dices = new Dice[5];
+            Dices = sortedHand;
             handValue = new HandValue();
         }
 

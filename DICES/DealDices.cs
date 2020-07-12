@@ -27,7 +27,7 @@ namespace DICES
             getHand();
             sortDices();            
             drawDices();
-            //evaluateHands();
+            evaluateHands();
         }
 
         public void getHand()
@@ -98,6 +98,46 @@ namespace DICES
                 x++;
             }
 
+        }
+
+        public void evaluateHands()
+        {
+            
+            HandEvaluator playerHandEvaluator = new HandEvaluator(sortedPlayerHand);
+            HandEvaluator computerHandEvaluator = new HandEvaluator(sortedComputerHand);
+
+
+            Dice playerHand = playerHandEvaluator.EvaluateDice();
+            Dice computerHand = computerHandEvaluator.EvaluateDice();
+
+           
+            Console.WriteLine("\n\n\n\n\nPlayer's Hand: " + playerHand);
+            Console.WriteLine("\nComputer's Hand: " + computerHand);
+
+           
+            if (playerHand > computerHand)
+            {
+                Console.WriteLine("Player WINS!");
+            }
+            else if (playerHand < computerHand)
+            {
+                Console.WriteLine("Computer WINS!");
+            }
+            else
+            {
+                
+                if (playerHandEvaluator.HandValues.Total > computerHandEvaluator.HandValues.Total)
+                    Console.WriteLine("Player WINS!");
+                else if (playerHandEvaluator.HandValues.Total < computerHandEvaluator.HandValues.Total)
+                    Console.WriteLine("Computer WINS!");
+               
+                else if (playerHandEvaluator.HandValues.HighDice > computerHandEvaluator.HandValues.HighDice)
+                    Console.WriteLine("Player WINS!");
+                else if (playerHandEvaluator.HandValues.HighDice < computerHandEvaluator.HandValues.HighDice)
+                    Console.WriteLine("Computer WINS!");
+                else
+                    Console.WriteLine("DRAW, no one wins!");
+            }
         }
     }
 }
