@@ -61,9 +61,8 @@ namespace DICES
                     Console.Write("SIX");
                     break;
                 
-            }            
+            }        
             
-
             // rysowanie kości na ekranie konsoli
             Console.SetCursorPosition(x + 2, y + 3);
             Console.Write(dice.MyValue); 
