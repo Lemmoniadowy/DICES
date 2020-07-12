@@ -107,8 +107,8 @@ namespace DICES
             HandEvaluator computerHandEvaluator = new HandEvaluator(sortedComputerHand);
 
 
-            Dice playerHand = playerHandEvaluator.EvaluateDice();
-            Dice computerHand = computerHandEvaluator.EvaluateDice();
+            Hand playerHand = playerHandEvaluator.EvaluateDice();
+            Hand computerHand = computerHandEvaluator.EvaluateHand();
 
            
             Console.WriteLine("\n\n\n\n\nPlayer's Hand: " + playerHand);

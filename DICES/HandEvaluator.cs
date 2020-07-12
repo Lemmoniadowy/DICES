@@ -122,6 +122,7 @@ namespace DICES
             }
         }
 
+       
         private bool FourOfKind()
         {
             if(dices[0].MyValue == dices[1].MyValue && dices[0].MyValue == dices[2].MyValue && dices[0].MyValue == dices[3].MyValue)

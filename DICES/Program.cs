@@ -27,13 +27,13 @@ namespace DICES
             {
                 dd.Deal();
 
-                char selection = ' ';
+                string selection = " ";
                 while (!selection.Equals('Y') && !selection.Equals('N'))
                 {
                     Console.WriteLine("Play again? Y-N");
                     
                     
-                    selection = Convert.ToChar(Console.ReadLine().ToUpper());
+                    selection = Convert.ToString(Console.ReadLine().ToUpper());
 
                     if (selection.Equals('Y'))
                         quit = false;
