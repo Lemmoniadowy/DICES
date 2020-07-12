@@ -104,5 +104,122 @@ namespace DICES
                     tenSum++;
             }
         }
+
+        private bool FourKind()
+        {
+            if(dices[0].MyValue == dices[1].MyValue && dices[0].MyValue == dices[2].MyValue && dices[0].MyValue == dices[3].MyValue)
+            {
+                handValue.Total = (int)dices[1].MyValue * 4;
+                handValue.HighDice = (int)dices[4].MyValue;
+                return true;
+            }
+            else if (dices[1].MyValue == dices[2].MyValue && dices[1].MyValue == dices[3].MyValue && dices[1].MyValue == dices[4].MyValue)
+            {
+                handValue.Total = (int)dices[1].MyValue * 4;
+                handValue.HighDice = (int)dices[0].MyValue;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool FullHouse()
+        {
+            if ((dices[0].MyValue == dices[1].MyValue && dices[0].MyValue == dices[2].MyValue && dices[3].MyValue == dices[4].MyValue) ||
+                (dices[0].MyValue == dices[1].MyValue && dices[2].MyValue == dices[3].MyValue && dices[2].MyValue == dices[4].MyValue))
+            {
+                handValue.Total = (int)(dices[0].MyValue) + (int)(dices[1].MyValue) + (int)(dices[2].MyValue) +
+                    (int)(dices[3].MyValue) + (int)(dices[4].MyValue);
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool Straight()
+        {
+            
+            if (dices[0].MyValue + 1 == dices[1].MyValue &&
+                dices[1].MyValue + 1 == dices[2].MyValue &&
+                dices[2].MyValue + 1 == dices[3].MyValue &&
+                dices[3].MyValue + 1 == dices[4].MyValue)
+            {                
+                handValue.Total = (int)dices[4].MyValue;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool ThreeOfKind()
+        {            
+            if ((dices[0].MyValue == dices[1].MyValue && dices[0].MyValue == dices[2].MyValue) ||
+            (dices[1].MyValue == dices[2].MyValue && dices[1].MyValue == dices[3].MyValue))
+            {
+                handValue.Total = (int)dices[2].MyValue * 3;
+                handValue.HighDice = (int)dices[4].MyValue;
+                return true;
+            }
+            else if (dices[2].MyValue == dices[3].MyValue && dices[2].MyValue == dices[4].MyValue)
+            {
+                handValue.Total = (int)dices[2].MyValue * 3;
+                handValue.HighDice = (int)dices[1].MyValue;
+                return true;
+            }
+            return false;
+        }
+
+        private bool TwoPairs()
+        {             
+            if (dices[0].MyValue == dices[1].MyValue && dices[2].MyValue == dices[3].MyValue)
+            {
+                handValue.Total = ((int)dices[1].MyValue * 2) + ((int)dices[3].MyValue * 2);
+                handValue.HighDice = (int)dices[4].MyValue;
+                return true;
+            }
+            else if (dices[0].MyValue == dices[1].MyValue && dices[3].MyValue == dices[4].MyValue)
+            {
+                handValue.Total = ((int)dices[1].MyValue * 2) + ((int)dices[3].MyValue * 2);
+                handValue.HighDice = (int)dices[2].MyValue;
+                return true;
+            }
+            else if (dices[1].MyValue == dices[2].MyValue && dices[3].MyValue == dices[4].MyValue)
+            {
+                handValue.Total = ((int)dices[1].MyValue * 2) + ((int)dices[3].MyValue * 2);
+                handValue.HighDice = (int)dices[0].MyValue;
+                return true;
+            }
+            return false;
+        }
+
+        private bool OnePair()
+        {            
+            if (dices[0].MyValue == dices[1].MyValue)
+            {
+                handValue.Total = (int)dices[0].MyValue * 2;
+                handValue.HighDice = (int)dices[4].MyValue;
+                return true;
+            }
+            else if (dices[1].MyValue == dices[2].MyValue)
+            {
+                handValue.Total = (int)dices[1].MyValue * 2;
+                handValue.HighDice = (int)dices[4].MyValue;
+                return true;
+            }
+            else if (dices[2].MyValue == dices[3].MyValue)
+            {
+                handValue.Total = (int)dices[2].MyValue * 2;
+                handValue.HighDice = (int)dices[4].MyValue;
+                return true;
+            }
+            else if (dices[3].MyValue == dices[4].MyValue)
+            {
+                handValue.Total = (int)dices[3].MyValue * 2;
+                handValue.HighDice = (int)dices[2].MyValue;
+                return true;
+            }
+
+            return false;
+        }
     }
 }
