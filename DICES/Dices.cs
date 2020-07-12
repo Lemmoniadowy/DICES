@@ -21,7 +21,7 @@ namespace DICES
             SEVEN,
             EIGHT,
             NINE,
-            TEN,
+            TEN
             
         }
         
