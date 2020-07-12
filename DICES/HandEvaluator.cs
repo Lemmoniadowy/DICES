@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace DICES
 {
@@ -126,7 +127,38 @@ namespace DICES
             }
         }
 
-       
+        internal Hand EvaluateHand()
+        {
+            if (FourOfKind())
+            {
+                return Hand.FourKind;
+            }
+            if (FullHouse())
+            {
+                return Hand.FullHouse;
+            }
+            if (Straight())
+            {
+                return Hand.Straight;
+            }
+            if (ThreeOfKind())
+            {
+                return Hand.ThreeKind;
+            }
+            if (TwoPairs())
+            {
+                return Hand.TwoPairs;
+            }
+            if (OnePair())
+            {
+                return Hand.OnePair;
+            }
+        
+            else return Hand.Nothing;
+            
+        }
+
+
         private bool FourOfKind()
         {
             if(dices[0].MyValue == dices[1].MyValue && dices[0].MyValue == dices[2].MyValue && dices[0].MyValue == dices[3].MyValue)

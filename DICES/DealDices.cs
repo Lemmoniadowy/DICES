@@ -110,7 +110,7 @@ namespace DICES
             HandEvaluator computerHandEvaluator = new HandEvaluator(sortedComputerHand);
 
 
-            Hand playerHand = playerHandEvaluator.EvaluateDice();
+            Hand playerHand = playerHandEvaluator.EvaluateHand();
             Hand computerHand = computerHandEvaluator.EvaluateHand();
 
            
